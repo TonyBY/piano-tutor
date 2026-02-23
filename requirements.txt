@@ -1,0 +1,55 @@
+# ─── Python version ───────────────────────────────────────────────────────────
+# Minimum: Python 3.8  |  Recommended: Python 3.10 or 3.11
+#
+# Compatibility matrix for Python 3.8:
+#   numpy   1.24.x  (1.25+ requires Py≥3.9)
+#   scipy   1.10.x  (1.11+ requires Py≥3.9)
+#   matplotlib 3.7.x (3.8+ requires Py≥3.9)
+#   music21 8.x     (9.x requires Py≥3.9)
+#   Pillow  10.x    (11.x requires Py≥3.9)
+#
+# On Python 3.10+ you can relax these to just ">=<min>" with no upper bound.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ─── Core web framework ───────────────────────────────────────────────────────
+streamlit>=1.28.0
+
+# ─── Numerical / audio ────────────────────────────────────────────────────────
+numpy>=1.22.0
+scipy>=1.7.0          # 1.10.1 is latest for Py3.8; no upper bound needed
+librosa>=0.10.0
+soundfile>=0.12.1
+
+# ─── Audio → MIDI transcription ───────────────────────────────────────────────
+# Spotify Basic Pitch (polyphonic, CPU-friendly, ONNX backend in 0.3+)
+basic-pitch>=0.3.0
+
+# ─── MIDI utilities ───────────────────────────────────────────────────────────
+pretty_midi>=0.2.9
+
+# ─── Music notation ───────────────────────────────────────────────────────────
+music21>=7.1.0        # 8.x is latest for Py3.8; 9.x requires Py≥3.9
+
+# ─── Video rendering ──────────────────────────────────────────────────────────
+opencv-python-headless>=4.8.0
+Pillow>=9.0.0         # 10.x still supports Py3.8; 11.x requires Py≥3.9
+matplotlib>=3.5.0     # 3.7.x is latest for Py3.8; 3.8+ requires Py≥3.9
+
+# ─── URL / YouTube download ───────────────────────────────────────────────────
+yt-dlp>=2024.1.0
+
+# ─── ffmpeg Python wrapper (optional, for probing) ────────────────────────────
+ffmpeg-python>=0.2.0
+
+# ─── Sheet-music fallback (proper staff notation without system tools) ─────────
+# Used when MuseScore and LilyPond are not installed.
+# verovio renders MusicXML → SVG with professional staff notation (requires Python ≥ 3.9
+# for verovio≥4; on Python 3.8 also install importlib_resources).
+# reportlab is used by svglib for SVG→PNG; ImageMagick 'magick'/'convert' is tried first.
+verovio>=3.0.0
+importlib_resources>=5.0.0  # needed by verovio on Python 3.8
+reportlab>=3.6.0
+
+# ─── Testing ──────────────────────────────────────────────────────────────────
+pytest>=7.0.0
+pytest-cov>=4.0.0
