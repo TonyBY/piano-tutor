@@ -21,8 +21,12 @@ librosa>=0.10.0
 soundfile>=0.12.1
 
 # ─── Audio → MIDI transcription ───────────────────────────────────────────────
-# Spotify Basic Pitch (polyphonic, CPU-friendly, ONNX backend in 0.3+)
-basic-pitch>=0.3.0
+# basic-pitch is optional: install it locally for polyphonic transcription.
+# It is NOT listed here because basic-pitch 0.4+ depends on tensorflow on
+# Linux Python 3.11, which conflicts with Streamlit's dependencies.
+# When basic-pitch is absent the app falls back to librosa pYIN (monophonic).
+# To enable polyphonic mode locally: pip install basic-pitch>=0.3.0
+onnxruntime>=1.13.0    # used by basic-pitch ONNX backend when installed
 
 # ─── MIDI utilities ───────────────────────────────────────────────────────────
 pretty_midi>=0.2.9
