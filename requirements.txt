@@ -38,16 +38,10 @@ matplotlib>=3.5.0     # 3.7.x is latest for Py3.8; 3.8+ requires Py≥3.9
 # ─── URL / YouTube download ───────────────────────────────────────────────────
 yt-dlp>=2024.1.0
 
-# ─── ffmpeg Python wrapper (optional, for probing) ────────────────────────────
-ffmpeg-python>=0.2.0
-
 # ─── Sheet-music fallback (proper staff notation without system tools) ─────────
-# Used when MuseScore and LilyPond are not installed.
-# verovio renders MusicXML → SVG with professional staff notation (requires Python ≥ 3.9
-# for verovio≥4; on Python 3.8 also install importlib_resources).
-# reportlab is used by svglib for SVG→PNG; ImageMagick 'magick'/'convert' is tried first.
+# verovio renders MusicXML → SVG with professional staff notation.
+# reportlab is used by svglib for SVG→PNG; ImageMagick CLI is the other fallback.
 verovio>=3.0.0
-importlib_resources>=5.0.0  # needed by verovio on Python 3.8
 reportlab>=3.6.0
 
 # ─── Testing ──────────────────────────────────────────────────────────────────

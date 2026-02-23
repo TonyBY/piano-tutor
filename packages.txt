@@ -1,9 +1,2 @@
-# System packages installed by Streamlit Community Cloud (apt-get).
-# ffmpeg is required for audio decoding and video assembly.
-# imagemagick is used as a fallback SVG→PNG converter for sheet music.
-# MuseScore 3 is attempted; if it fails to run in a headless env, the
-# app falls back to the matplotlib grand-staff renderer automatically.
 ffmpeg
 imagemagick
-# musescore3    # uncomment if you want MuseScore on Streamlit Cloud (may be slow)
-# lilypond      # uncomment for LilyPond support
